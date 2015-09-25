@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="vivace-plugin-imei" version="1.0">
+    <name>Imei</name>
+    <description>Vivace Imei Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,imei,phonegap,plugin</keywords>
+    <repo>https://github.com/scripthub/Imei.git</repo>
+
+    <engines>
+        <engine name="cordova" version=">=2.11.2" />
+    </engines>
+
+    <platform name="android">
+        <js-module src="www/Imei.js" name="Imei">
+            <clobbers target="Imei" />
+        </js-module>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Imei">
+                <param name="android-package" value="vivace.plugin.imei.Imei"/>
+            </feature>
+        </config-file>
+    </platform>
+</plugin>
