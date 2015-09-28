@@ -20,5 +20,6 @@
                 <param name="android-package" value="vivace.plugin.imei.Imei"/>
             </feature>
         </config-file>
+        <source-file src="src/android/Imei.java" target-dir="src/vivace/plugin/imei" />
     </platform>
 </plugin>
