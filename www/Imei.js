@@ -8,6 +8,7 @@ var channel = require('cordova/channel');
     }
 }*/
 
+channel.createSticky('onCordovaInfoReady');
 channel.waitForInitialization('onCordovaInfoReady');
 
 function Imei(){
