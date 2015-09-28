@@ -3,6 +3,7 @@ package com.vivace.plugin.imei;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONException;
 import android.content.Context;
 import android.telephony.TelephonyManager;
