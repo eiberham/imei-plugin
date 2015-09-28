@@ -14,7 +14,7 @@ channel.waitForInitialization('onCordovaInfoReady');*/
 function Imei(){
     this.imei = null;
     exec(function(imei){
-        this.imei = imei;}, null, "Imei", "imei", []);
+        Imei.imei = imei;}, null, "Imei", "imei", []);
     /*channel.onCordovaReady.suscribe(function(){
         exec(function(imei){
             console.log(imei);}, null, "Imei", "imei", []);
