@@ -1,4 +1,4 @@
-package vivace.plugin.imei;
+package com.vivace.plugin.imei;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
