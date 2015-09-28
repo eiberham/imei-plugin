@@ -17,12 +17,12 @@
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Imei">
-                <param name="android-package" value="com.vivace.plugin.imei.Imei"/>
+                <param name="android-package" value="com.vivace.plugin.Imei"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
         </config-file>
-        <source-file src="src/android/Imei.java" target-dir="src/com/vivace/plugin/imei" />
+        <source-file src="src/android/Imei.java" target-dir="src/com/vivace/plugin" />
     </platform>
 </plugin>
