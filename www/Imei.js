@@ -2,7 +2,7 @@ var exec = require('cordova/exec');
 
 var Imei =
 {
-    imei : function() { return exec(null, null, "Imei", "imei", []); }
+    getImei : function() { return exec(null, null, "Imei", "getImei", []); }
 }
 
 module.exports = Imei;
