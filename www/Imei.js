@@ -1,5 +1,5 @@
 var exec = require('cordova/exec');
-var channel = require('cordova/channel');
+//var channel = require('cordova/channel');
 
 /*var Imei =
 {
@@ -8,17 +8,18 @@ var channel = require('cordova/channel');
     }
 }*/
 
-channel.createSticky('onCordovaInfoReady');
-channel.waitForInitialization('onCordovaInfoReady');
+/*channel.createSticky('onCordovaInfoReady');
+channel.waitForInitialization('onCordovaInfoReady');*/
 
 function Imei(){
     this.imei = null;
-
-    channel.onCordovaReady.suscribe(function(){
+    exec(function(imei){
+        this.imei = imei;}, null, "Imei", "imei", []);
+    /*channel.onCordovaReady.suscribe(function(){
         exec(function(imei){
-            this.imei = imei;}, null, "Imei", "imei", []);
+            console.log(imei);}, null, "Imei", "imei", []);
         channel.onCordovaInfoReady.fire();
-    });
+    });*/
 }
 
 module.exports = new Imei();
