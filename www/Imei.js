@@ -16,6 +16,7 @@ function Imei(){
     channel.onCordovaReady.suscribe(function(){
         exec(function(imei){
             this.imei = imei;}, null, "Imei", "imei", []);
+        channel.onCordovaInfoReady.fire();
     });
 }
 
