@@ -8,8 +8,7 @@ import android.content.Context;
 import android.telephony.TelephonyManager;
 
 public class Imei extends CordovaPlugin{
-	private final static String 		IMEI = "imei";
-	private String 						imei;
+	private static final String 		IMEI = "imei";
 	
 	public Imei(){}
 	
@@ -17,15 +16,21 @@ public class Imei extends CordovaPlugin{
 	public boolean execute(String action, CordovaArgs args,
 			CallbackContext callbackContext) throws JSONException {
 		// TODO Auto-generated method stub
-		
+		PluginResult.Status status = PluginResult.Status.OK;
+        String imei = "";
+        		
 		if(action.equals(IMEI)){
 			TelephonyManager tm = (TelephonyManager) cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
-	        this.imei = tm.getDeviceId();
+	        imei = tm.getDeviceId();
 	        
-	        callbackContext.success(this.imei);
-	        return true;
 		}else{
-			return false;
+			status = PluginResult.Status.INVALID_ACTION;
 		}
+		
+		PluginResult result = new PluginResult(status, imei);
+		result.setKeepCallback(true);
+		callbackContext.sendPluginResult(result);
+		
+        return true;
 	}
 }
