@@ -3,14 +3,10 @@ var exec = require('cordova/exec');
 function Imei(){
     this.number = null;
 
-    /*var self = this;
+    var self = this;
     self.get(function(imei){
         self.number = imei;
-    }, null);*/
-
-    exec(function(imei){
-        this.number = imei;
-    }, errorCallback, "Imei", "imei", []).bind(this);
+    }, null);
 }
 
 Imei.prototype.get = function(successCallback, errorCallback){
