@@ -13,6 +13,7 @@ channel.waitForInitialization('onCordovaInfoReady');*/
 
 function Imei(){
     this.number = null;
+    this.nombre = "Imei";
 
     /*channel.onCordovaReady.suscribe(function(){
         exec(function(imei){
