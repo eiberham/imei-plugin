@@ -12,14 +12,21 @@ var exec = require('cordova/exec');
 channel.waitForInitialization('onCordovaInfoReady');*/
 
 function Imei(){
-    this.imei = null;
-    exec(function(imei){
-        Imei.imei = imei; console.log(imei);}, null, "Imei", "imei", []);
+    this.number = null;
+
     /*channel.onCordovaReady.suscribe(function(){
         exec(function(imei){
             console.log(imei);}, null, "Imei", "imei", []);
         channel.onCordovaInfoReady.fire();
     });*/
+
+    this.get(function(imei){
+       this.number = imei;
+    }, null);
+}
+
+Imei.prototype.get = function(successCallback, errorCallback){
+    exec(successCallback, errorCallback, "Imei", "imei", []);
 }
 
 module.exports = new Imei();
