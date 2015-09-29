@@ -21,8 +21,10 @@ function Imei(){
         channel.onCordovaInfoReady.fire();
     });*/
 
-    this.get(function(imei){
-       this.number = imei;
+    var me = this;
+    me.get(function(imei){
+        console.log("el imei es: " + imei);
+        me.number = imei;
     }, null);
 }
 
